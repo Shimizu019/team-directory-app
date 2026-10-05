@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -28,8 +29,8 @@ function App() {
       <div
         className={
           darkMode
-            ? "dark min-h-screen bg-gray-900 text-white"
-            : "min-h-screen bg-gray-100 text-gray-900"
+            ? "dark flex min-h-screen flex-col bg-slate-950 text-slate-100"
+            : "flex min-h-screen flex-col bg-slate-100 text-slate-900"
         }
       >
         <Navbar
@@ -38,7 +39,7 @@ function App() {
           onToggleDarkMode={toggleDarkMode}
         />
 
-        <main>
+        <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
@@ -55,6 +56,8 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+
+        <Footer />
       </div>
     </BrowserRouter>
   );
