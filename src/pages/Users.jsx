@@ -33,21 +33,48 @@ function Users({ favorites, onToggleFavorite }) {
   });
 
   if (loading) {
-    return <Loader />;
+    return (
+      <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+        <Loader />
+      </div>
+    );
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6">
-      <h1 className="text-3xl font-bold mb-4">Users ({filteredUsers.length})</h1>
+    <div className="page-enter mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+            Directory
+          </p>
+          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Team members{" "}
+            <span className="text-indigo-600 dark:text-indigo-400">
+              ({filteredUsers.length})
+            </span>
+          </h1>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            Search by name or role · click a card to view full details.
+          </p>
+        </div>
+        <span className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+          ★ {favorites.length} favorited
+        </span>
+      </div>
 
-      <div className="flex gap-2 mb-6">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search by name or role..."
-          className="flex-1 border rounded px-3 py-2 dark:bg-gray-800 dark:border-gray-700"
-        />
+      <div className="mt-6 flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800 sm:flex-row">
+        <div className="relative flex-1">
+          <span aria-hidden="true" className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+            🔍
+          </span>
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search by name or role... (try “developer”)"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-3 text-sm outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 dark:border-slate-600 dark:bg-slate-900 dark:focus:bg-slate-900 dark:focus:ring-indigo-900"
+          />
+        </div>
         <Button
           label="Clear"
           variant="danger"
@@ -55,24 +82,26 @@ function Users({ favorites, onToggleFavorite }) {
         />
       </div>
 
-      {filteredUsers.length === 0 ? (
-        <ErrorMessage message="No users found." />
-      ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredUsers.map((user) => (
-            <UserCard
-              key={user.id}
-              id={user.id}
-              name={user.name}
-              email={user.email}
-              company={user.company}
-              role={user.role}
-              isFavorite={favorites.includes(user.id)}
-              onToggleFavorite={onToggleFavorite}
-            />
-          ))}
-        </div>
-      )}
+      <div className="mt-6">
+        {filteredUsers.length === 0 ? (
+          <ErrorMessage message="No users found." />
+        ) : (
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredUsers.map((user) => (
+              <UserCard
+                key={user.id}
+                id={user.id}
+                name={user.name}
+                email={user.email}
+                company={user.company}
+                role={user.role}
+                isFavorite={favorites.includes(user.id)}
+                onToggleFavorite={onToggleFavorite}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
