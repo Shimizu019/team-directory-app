@@ -7,11 +7,11 @@ function About() {
   }, []);
 
   const topics = [
-    ["🧭 React Router", "Page navigation across Home, Users, details, and About."],
-    ["🧩 Reusable components", "Navbar, cards, buttons, loader, and error messages with props."],
-    ["⚛ useState", "Search text, favorites list, and dark mode state."],
-    ["🔄 useEffect", "Simulated data loading and per-page document titles."],
-    ["💾 Local user data", "All members come from src/data/users.js — no API."],
+    ["React Router", "Page navigation across Home, Users, details, and About."],
+    ["Reusable components", "Navbar, cards, buttons, loader, and error messages with props."],
+    ["useState", "Search text, favorites list, and dark mode state."],
+    ["useEffect", "Simulated data loading and per-page document titles."],
+    ["Local user data", "All members come from src/data/users.js — no API."],
   ];
 
   return (

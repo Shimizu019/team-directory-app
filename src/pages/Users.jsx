@@ -58,15 +58,12 @@ function Users({ favorites, onToggleFavorite }) {
           </p>
         </div>
         <span className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-          ★ {favorites.length} favorited
+          {favorites.length} favorited
         </span>
       </div>
 
       <div className="mt-6 flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800 sm:flex-row">
         <div className="relative flex-1">
-          <span aria-hidden="true" className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">
-            🔍
-          </span>
           <input
             type="text"
             value={search}

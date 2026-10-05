@@ -26,13 +26,13 @@ function UserCard({ id, name, email, company, role, isFavorite, onToggleFavorite
               : "rounded-full border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-500 transition hover:bg-slate-100 hover:text-amber-500 active:scale-95 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
           }
         >
-          {isFavorite ? "★ Favorited" : "☆ Favorite"}
+          {isFavorite ? "Favorited" : "Favorite"}
         </button>
       </div>
 
       <div className="mt-4 space-y-1.5 text-sm text-slate-600 dark:text-slate-300">
-        <p className="truncate">✉️ {email}</p>
-        <p>🏢 {company}</p>
+        <p className="truncate">{email}</p>
+        <p>{company}</p>
       </div>
 
       <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-700">

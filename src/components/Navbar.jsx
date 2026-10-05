@@ -36,13 +36,13 @@ function Navbar({ favoritesCount, darkMode, onToggleDarkMode }) {
 
         <div className="flex items-center gap-2.5">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-sm font-semibold text-amber-700 dark:border-amber-900 dark:bg-amber-950/60 dark:text-amber-300">
-            <span aria-hidden="true">★</span> Favorites: {favoritesCount}
+            Favorites: {favoritesCount}
           </span>
           <button
             onClick={onToggleDarkMode}
             className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-100 active:scale-95 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
           >
-            {darkMode ? "☀ Light Mode" : "🌙 Dark Mode"}
+            {darkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
       </nav>

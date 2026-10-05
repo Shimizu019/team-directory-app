@@ -88,16 +88,15 @@ function Home() {
         {/* Feature highlights */}
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
-            ["🔍", "Instant search", "Filter members by name or role as you type."],
-            ["★", "Favorites", "Star members and track them in the navbar."],
-            ["🌙", "Dark mode", "Switch themes anytime from the header."],
-          ].map(([icon, title, text]) => (
+            ["Instant search", "Filter members by name or role as you type."],
+            ["Favorites", "Star members and track them in the navbar."],
+            ["Dark mode", "Switch themes anytime from the header."],
+          ].map(([title, text]) => (
             <div
               key={title}
               className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700 dark:bg-slate-800"
             >
-              <p className="text-2xl">{icon}</p>
-              <h3 className="mt-2 font-bold">{title}</h3>
+              <h3 className="font-bold">{title}</h3>
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                 {text}
               </p>

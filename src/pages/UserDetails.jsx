@@ -57,10 +57,10 @@ function UserDetails() {
         </div>
         <div className="space-y-3 px-6 py-6">
           {[
-            ["✉️ Email", user.email],
-            ["🏢 Company", user.company],
-            ["💼 Role", user.role],
-            ["🆔 Member ID", `#${user.id}`],
+            ["Email", user.email],
+            ["Company", user.company],
+            ["Role", user.role],
+            ["Member ID", `#${user.id}`],
           ].map(([label, value]) => (
             <div
               key={label}

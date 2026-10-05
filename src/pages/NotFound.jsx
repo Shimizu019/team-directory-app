@@ -8,8 +8,8 @@ function NotFound() {
 
   return (
     <div className="page-enter mx-auto max-w-xl px-4 py-16 text-center sm:px-6">
-      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-600 to-violet-600 text-3xl shadow-lg">
-        <span aria-hidden="true">🧭</span>
+      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-600 to-violet-600 text-3xl font-black text-white shadow-lg">
+        404
       </div>
       <h1 className="mt-5 text-5xl font-extrabold tracking-tight">404</h1>
       <p className="mt-2 text-lg text-slate-500 dark:text-slate-400">
